@@ -1,4 +1,3 @@
-import { Entity, Enum, ManyToOne, OneToMany, Property, Rel } from "@mikro-orm/core";
 import { BaseEntity } from "../../../core/entities/base.entity";
 
 type basicUserInfo = {
@@ -14,7 +13,6 @@ export class UserEntity extends BaseEntity
     public email!: string;
     public password!: string;
     public username!: string;
-    public is_deleted: boolean;
 
 
     public updateDetails(data: basicUserInfo): void

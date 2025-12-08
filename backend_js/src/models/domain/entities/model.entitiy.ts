@@ -1,9 +1,8 @@
-import { Entity, Enum, ManyToOne, OneToMany, Property, Rel } from "@mikro-orm/core";
 import { BaseEntity } from "../../../core/entities/base.entity";
 import { UserEntity } from "src/users/domain/entities/user.entity";
 import { TagsEntity } from "src/tags/domain/entities/tag.entitiy";
 
-@Entity()
+
 export class ModelEntity extends BaseEntity
 {
     public name: string;
