@@ -1,5 +1,5 @@
 import { BaseEntity } from "../../../core/entities/base.entity";
-import { IMAGE_TYPE, } from "src/core/rules/types";
+import { IMAGE_TYPE, } from "src/core/types/types";
 import { TagsEntity } from "src/tags/domain/entities/tag.entitiy";
 
 export class ImageEntity extends BaseEntity

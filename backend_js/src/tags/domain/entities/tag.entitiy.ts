@@ -1,5 +1,5 @@
 import { BaseEntity } from "../../../core/entities/base.entity";
-import { TYPE } from "src/core/rules/types";
+import { TYPE } from "src/core/types/types";
 
 
 export class TagsEntity extends BaseEntity

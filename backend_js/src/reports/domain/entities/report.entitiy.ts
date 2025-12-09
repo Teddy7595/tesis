@@ -6,8 +6,9 @@ export class ReportEntity extends BaseEntity
 {
     public name: string;
     public description: string;
-    public file_path: string;
+    public file_url: string;
     public owner: UserEntity;
     public is_public: boolean;
-    public modified_by: UserEntity[];
+    public tags?: string;
+    public modified_by?: UserEntity[];
 }
