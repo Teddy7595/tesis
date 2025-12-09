@@ -9,10 +9,10 @@ type basicUserInfo = {
 
 export class UserEntity extends BaseEntity
 {
-    public name!: string;
-    public email!: string;
-    public password!: string;
-    public username!: string;
+    public name: string;
+    public email: string;
+    public password: string;
+    public username: string;
 
 
     public updateDetails(data: basicUserInfo): void

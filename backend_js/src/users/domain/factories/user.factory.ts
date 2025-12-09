@@ -10,6 +10,7 @@ export default class UserFactory
         UserFactory.ValidateUsername(data.name);
         UserFactory.ValidateUsername(data.username);
         UserFactory.ValidateEmail(data.email);
+        UserFactory.ValidatePassword(data.password);
         data.id = crypto.randomUUID();
         data.is_deleted = false;
         data.created_at = new Date();
