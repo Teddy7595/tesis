@@ -30,3 +30,19 @@ export class ResourceNotFoundException extends GeneralException
         super(`Resource not found: ${ resource }, please check the provided identifier.`, 'ResourceNotFoundException');
     }
 }
+
+export class PropertyTooLongException extends GeneralException
+{
+    constructor(property: string, maxLength: number)
+    {
+        super(`Property too long: ${ property } exceeds maximum length of ${ maxLength } characters.`, 'PropertyTooLongException');
+    }
+}
+
+export class PropertyTooShortException extends GeneralException
+{
+    constructor(property: string, minLength: number)
+    {
+        super(`Property too short: ${ property } is below minimum length of ${ minLength } characters.`, 'PropertyTooShortException');
+    }
+}
