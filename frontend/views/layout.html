@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout con Alpine.js</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #444;
+            color: white;
+            padding: 1rem;
+            float: left;
+            height: 100vh;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li {
+            padding: 0.5rem 0;
+            cursor: pointer;
+        }
+        .sidebar li:hover {
+            background-color: #555;
+            padding-left: 0.5rem;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-left: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div x-data="{ active: 'inicio' }">
+        <header>
+            <h1>Mi Aplicación</h1>
+        </header>
+        
+        <aside class="sidebar">
+            <ul>
+                <li @click="active = 'inicio'" :class="{ 'active': active === 'inicio' }">Inicio</li>
+                <li @click="active = 'sobre'" :class="{ 'active': active === 'sobre' }">Sobre</li>
+                <li @click="active = 'contacto'" :class="{ 'active': active === 'contacto' }">Contacto</li>
+            </ul>
+        </aside>
+        
+        <main class="content">
+            <div x-show="active === 'inicio'">
+                <h2>Inicio</h2>
+                <p>Bienvenido a la página de inicio.</p>
+            </div>
+            <div x-show="active === 'sobre'">
+                <h2>Sobre</h2>
+                <p>Información sobre la aplicación.</p>
+            </div>
+            <div x-show="active === 'contacto'">
+                <h2>Contacto</h2>
+                <p>Ponte en contacto con nosotros.</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 Mi Aplicación. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
