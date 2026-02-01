@@ -2,3 +2,7 @@ backend_js/node_modules/
 backend_js/dist/
 backend_js/.env
 backend_js/.vscode/
+backend_python/*/__pycache__/
+backend_python/.env
+backend_python/venv/
+backend_python/**/*.pyc
