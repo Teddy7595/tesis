@@ -4,7 +4,7 @@ from ..entities.user_entity import User
 from ..rules.text_rules import TextRules
 from ..exceptions.exception import DomainException
 
-CHAR_LIMIT:int = 150
+CHAR_LIMIT:int = 300
 
 class UserFactory:
     @staticmethod
@@ -26,9 +26,10 @@ class UserFactory:
     @staticmethod
     def update(user: User, **kwargs) -> User:
         """Update an existing User instance with provided fields."""
-        valid_fields = {'name', 'email', 'password', 'username', 'sci_role'}
+        valid_fields = {'name', 'username', 'sci_role', 'bio'}
         for key, value in kwargs.items():
             if key in valid_fields:
+                UserFactory.validate_strings(value, key.capitalize())
                 setattr(user, key, value)
         user.updated_at = datetime.now()
         return user
