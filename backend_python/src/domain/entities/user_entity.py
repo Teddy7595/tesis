@@ -9,6 +9,7 @@ class User(BaseEntity):
     email: str = ""
     password: str = ""
     username: str = ""
+    sci_role: str = "" # e.g. 'metalurgist', 'geologist', etc.
 
     def update_details(self, name: str, email: str, username: str):
         self.name = name
